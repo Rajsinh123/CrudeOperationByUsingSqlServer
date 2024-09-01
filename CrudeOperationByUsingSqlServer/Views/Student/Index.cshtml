@@ -1,0 +1,44 @@
+﻿@model IEnumerable<CrudeOperationByUsingSqlServer.Models.Student>
+@{
+    ViewBag.Title = "Index";
+}
+<html>
+<head>
+    <title>CrudeOperationByUsingSqlServer</title>
+</head>
+<body>
+    <h2>Index</h2>
+    @Html.ActionLink("Add the Student","Create")
+    <hr/>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>StudentId</th>
+                <th>StudentName</th>
+                <th>StudentCity</th>
+                <th>Salary</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach(var item  in Model) { 
+                <tr>
+                    <td>@item.StudentId</td>
+                    <td>@item.StudentName</td>
+                    <td>@item.StudentCity</td>
+                    <td>@item.Salary</td>
+                    <td>@Html.ActionLink("Edit","Edit",new {@id=item.StudentId })
+                    &nbsp;
+                    @Html.ActionLink("Delete","Delete",new { @id = item.StudentId })
+                    
+                    </td>
+            </tr>
+            }
+        </tbody>                                                                      
+
+    </table>
+
+</body>
+</html>
+
+

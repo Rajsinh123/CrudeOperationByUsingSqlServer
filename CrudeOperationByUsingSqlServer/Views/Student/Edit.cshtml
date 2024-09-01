@@ -1,0 +1,40 @@
+﻿
+@model CrudeOperationByUsingSqlServer.Models.Student
+@{
+    ViewBag.Title = "Create";
+}
+<html>
+<head>
+    <title>CrudeOpertionByUsingSqlServer</title>
+</head>
+<body>
+    <h2>Create</h2>
+    <div>
+        @using (Html.BeginForm())
+        {
+            <table>
+                <tr>
+                    <td>StudentId</td>
+                    <td>@Html.TextAreaFor(e => e.StudentId)</td>
+                </tr>
+                <tr>
+                    <td>StudentName</td>
+                    <td>@Html.TextAreaFor(e => e.StudentName)</td>
+                </tr>
+                <tr>
+                    <td>StudentCity</td>
+                    <td>@Html.TextAreaFor(e => e.StudentCity)</td>
+                </tr>
+                <tr>
+                    <td>Salary</td>
+                    <td>@Html.TextAreaFor(e => e.Salary)</td>
+                </tr>
+                <td><input type="submit" value="Submit" /></td>
+                <td>@Html.ActionLink("List Of Student", "Index")</td>
+            </table>
+        }
+    </div>
+
+</body>
+</html>
+
